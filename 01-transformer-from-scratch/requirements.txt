@@ -1,0 +1,17 @@
+# Core dependencies (install these first)
+numpy>=1.21.0
+matplotlib>=3.4.0
+tqdm>=4.62.0
+scikit-learn>=1.0.0
+
+# System monitoring
+psutil>=5.8.0
+seaborn>=0.11.0
+
+# Optional (for advanced logging)
+tensorboard>=2.10.0
+
+
+# PyTorch with CUDA 12.1 (for RTX 4060) - Install separately
+# Run this command instead:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
