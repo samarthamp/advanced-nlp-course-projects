@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1-Score,Size (MB),Inference (ms)
+Baseline FP32,0.9459,0.9458,0.9459,0.9458,474.71,94.13
+INT8 Scratch,0.9459,0.9458,0.9459,0.9458,118.68,96.00
+INT8 BitsAndBytes,0.9459,0.9458,0.9459,0.9458,168.36,247.94
+NF4 BitsAndBytes,0.9458,0.9456,0.9458,0.9457,127.86,56.37

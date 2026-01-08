@@ -1,0 +1,232 @@
+## Fine-tuning and Quantization of GPT-2 for Text Classification
+---
+
+## 📁 Project Structure
+
+```
+.
+├── src/
+│   ├── 1_baseline_finetuning.py          # Task 2.1: Full fine-tuning baseline
+│   ├── 2_quantization_scratch.py         # Task 2.2: Custom INT8 quantization
+│   ├── 3_bitsandbytes_quant.py          # Task 2.3: BitsAndBytes quantization
+│   ├── 4_evaluation_metrics.py          # Task 1: Evaluation metrics analysis
+│   └── 5_compare_all_models.py          # Comparison framework
+├── models/
+│   └── baseline_gpt2/                   # Fine-tuned model (generated after training)
+├── results/
+│   ├── comparison_table.csv             # All metrics in tabular format
+│   ├── baseline_confusion_matrix.png
+│   ├── int8_scratch_confusion_matrix.png
+│   ├── int8_bitsandbytes_confusion_matrix.png
+│   ├── nf4_bitsandbytes_confusion_matrix.png
+│   ├── performance_comparison.png
+│   └── efficiency_comparison.png
+├── report_1.pdf                          # Evaluation metrics analysis
+├── report_2.pdf                          # Quantization experiments report
+├── README.md                            # This file
+├── run_all_experiments.py                # Script to run all tasks sequentially
+└── verify_setup.py                       # Script to verify environment setup   
+```
+
+---
+link for models:-https://drive.google.com/drive/folders/1u4tFVZpl4P3aeReZZsVBifuZO8h0FbBL?usp=sharing
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.8+
+- CUDA-capable GPU (recommended for reasonable training times)
+- ~5GB free disk space for models and datasets
+
+### Installation
+
+1. Clone this repository
+2. Install required packages:
+
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install transformers datasets
+pip install bitsandbytes
+pip install scikit-learn matplotlib seaborn
+pip install rouge-score nltk bert-score sentence-transformers
+pip install pandas numpy tqdm
+```
+
+---
+
+## 🎯 Running the Experiments
+
+### Option 1: Run Complete Pipeline (Recommended)
+
+Execute all tasks sequentially:
+
+```bash
+python run_all_experiments.py
+```
+
+**Runtime:** ~2-2.5 hours on GPU (most time spent on fine-tuning)
+
+**Output:** All results saved to `results/` directory, model saved to `models/baseline_gpt2/`
+
+### Option 2: Run Individual Tasks
+
+#### Task 1: Evaluation Metrics Analysis
+```bash
+python src/4_evaluation_metrics.py
+```
+
+#### Task 2.1: Baseline Fine-tuning
+```bash
+python src/1_baseline_finetuning.py
+```
+
+#### Task 2.2: Custom INT8 Quantization
+```bash
+python src/2_quantization_scratch.py
+```
+
+#### Task 2.3: BitsAndBytes Quantization
+```bash
+python src/3_bitsandbytes_quant.py
+```
+
+---
+
+## 📊 Results Summary
+
+### Model Performance
+
+| Model | Accuracy | F1-Score | Size (MB) | Inference (ms) | Compression |
+|-------|----------|----------|-----------|----------------|-------------|
+| Baseline FP32 | 0.9459 | 0.9458 | 474.71 | 94.13 | 1.00x |
+| INT8 Scratch | 0.9459 | 0.9458 | 118.68 | 96.00 | 4.00x |
+| INT8 BitsAndBytes | 0.9459 | 0.9458 | 168.36 | 247.94 | 2.82x |
+| NF4 BitsAndBytes | 0.9458 | 0.9457 | 127.86 | 56.37 | 3.71x |
+
+### Key Findings
+
+- **Best Overall:** NF4 BitsAndBytes (40% faster, 3.71x compression, minimal accuracy loss)
+- **Best Compression:** INT8 Scratch (4x reduction, 75% memory savings)
+- **Accuracy Preservation:** All quantization methods maintain >94.5% accuracy
+
+---
+
+## 📝 Implementation Details
+
+### Dataset
+- **Name:** AG News
+- **Task:** 4-class text classification (World, Sports, Business, Sci/Tech)
+- **Training samples:** 120,000
+- **Test samples:** 7,600
+
+### Model Architecture
+- **Base Model:** GPT-2 (124.4M parameters)
+- **Fine-tuning:** Full parameter training for 3 epochs
+- **Optimizer:** AdamW (lr=2e-5)
+- **Batch size:** 16
+- **Max sequence length:** 128 tokens
+
+### Quantization Methods
+
+#### 1. INT8 Scratch Implementation
+- Custom linear quantization: FP32 → INT8
+- Per-tensor scale and zero-point calculation
+- Symmetric quantization range: [-128, 127]
+- Dequantization at model load time
+
+#### 2. INT8 BitsAndBytes
+- Library-optimized 8-bit quantization
+- Dynamic quantization during inference
+- Mixed-precision support
+
+#### 3. NF4 BitsAndBytes
+- 4-bit NormalFloat quantization
+- Asymmetric bins optimized for normally distributed weights
+- Double quantization enabled
+- Compute dtype: float16
+
+### Critical Implementation Note
+
+**CUDA Synchronization:** All inference timing measurements include explicit CUDA synchronization (`torch.cuda.synchronize()`) before and after model forward passes. This ensures accurate latency measurements by waiting for GPU operations to complete. Without synchronization, asynchronous kernel execution produces misleadingly low timings.
+
+---
+
+## 📈 Visualizations
+
+All visualizations are automatically generated and saved to `results/`:
+
+1. **Confusion Matrices:** Per-model classification performance across 4 classes
+2. **Performance Comparison:** Accuracy, Precision, Recall, F1-Score charts
+3. **Efficiency Comparison:** Model size and inference time bar charts
+4. **Comparison Table:** Complete metrics in CSV format
+
+---
+
+## 🔧 Troubleshooting
+
+### Out of Memory Errors
+- Reduce batch size in training scripts (line 60 in `1_baseline_finetuning.py`)
+- Use smaller sequence length (current: 128 tokens)
+
+### BitsAndBytes Installation Issues
+```bash
+# For Windows with CUDA 11.8:
+pip install bitsandbytes --prefer-binary
+
+# For Linux:
+pip install bitsandbytes
+```
+
+### Model Download Issues
+The first run downloads GPT-2 and AG News dataset automatically. If downloads fail:
+- Check internet connection
+- Ensure sufficient disk space (~2GB)
+- Try manual download from HuggingFace Hub
+
+---
+
+## 📚 References
+
+### Papers
+- **GPT-2:** Radford et al. (2019) - "Language Models are Unsupervised Multitask Learners"
+- **Quantization:** Jacob et al. (2018) - "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference"
+- **BitsAndBytes:** Dettmers et al. (2022) - "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale"
+- **NF4:** Dettmers et al. (2023) - "QLoRA: Efficient Finetuning of Quantized LLMs"
+
+### Libraries
+- **Transformers:** https://huggingface.co/docs/transformers
+- **BitsAndBytes:** https://github.com/TimDettmers/bitsandbytes
+- **PyTorch:** https://pytorch.org/
+
+---
+
+### Task 1: Evaluation Metrics
+- Analysis of ROUGE, BLEU, BERTScore
+- Reference-free evaluation (Perplexity)
+- Custom metric: Semantic Coherence Score (SCS)
+
+### Task 2: Fine-tuning and Quantization
+- **2.1:** Baseline FP32 fine-tuning
+- **2.2:** Custom INT8 quantization implementation
+- **2.3:** Library-based 8-bit and 4-bit quantization
+- **2.4:** Comprehensive analysis and reporting
+
+---
+
+## 📄 License
+
+Educational use only. Implementation created for Advanced NLP coursework.
+
+---
+
+## 🙏 Acknowledgments
+
+- HuggingFace team for Transformers library
+- Tim Dettmers for BitsAndBytes library
+- AG News dataset creators
+- Course instructors and TAs
+
+---
+
+**Note:** Fine-tuned model weights are not included in this repository due to size constraints (474 MB). Run `1_baseline_finetuning.py` to generate the model locally, or download from: [Add your model hosting link here if applicable]
