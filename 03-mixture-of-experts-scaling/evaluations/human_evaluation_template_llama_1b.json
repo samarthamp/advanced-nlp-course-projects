@@ -1,0 +1,74 @@
+[
+  {
+    "index": 8935,
+    "document": "Second-year scholars Callum Pritchard-Ellis, James Ballie, Callum Saunders, James Jones, Fraser Murdock and Perry Ng have all been offered senior deals...",
+    "reference_summary": "Crewe Alexandra manager Steve Davis says the future of the club looks very healthy as six academy graduates are offered professional contracts.",
+    "generated_summary": "Crewe Alexandra have signed a number of young players in a bid to strengthen their squad for the 2016-17 season. The club's manager, Steve Davis, has revealed the names of the players who have been offered senior deals. Crewe will now play Queens Park Rangers in the final of the Professional Development League",
+    "evaluation": {
+      "content_relevance": {
+        "score": 3,
+        "comments": "Moderate relevance. Captures some key points: Crewe Alexandra, young players, Steve Davis, senior deals. However, adds irrelevant information about QPR and Professional Development League final, which isn't in the document. Misses the positive sentiment about 'healthy future'."
+      },
+      "coherence": {
+        "score": 4,
+        "comments": "Good coherence. Three complete sentences that flow logically. However, the third sentence about QPR feels disconnected from the main narrative about contract offers."
+      },
+      "fluency": {
+        "score": 4,
+        "comments": "Good fluency. Grammatically correct with natural phrasing. Slightly verbose for a one-sentence summary task (three sentences instead of one)."
+      },
+      "factual_consistency": {
+        "score": 3,
+        "comments": "Partially consistent. Correctly identifies Crewe, Steve Davis, young players, and senior deals. However, adds information about QPR match and Professional Development League that isn't verified in the source. May be hallucination."
+      }
+    }
+  },
+  {
+    "index": 1424,
+    "document": "Foster's time of 11.62 seconds earned automatic qualification as she finished second in her first-round heat. However, Smyth exited from the men's 100m as he finished fifth in his heat in 10.66...",
+    "reference_summary": "Northern Ireland's Amy Foster safely progressed to the women's 100m semi-finals at the Commonwealth Games but Jason Smyth and Leon Reid bowed out of the men's sprint event.",
+    "generated_summary": "ot Mary Keitany who finished second in 2:26.55. The Kenyan, who won the women's marathon at the 2016 Rio Olympics, was the first African woman to win the Commonwealth Games 10,000m title in 2014. Cheyech Daniel also won the women's",
+    "evaluation": {
+      "content_relevance": {
+        "score": 1,
+        "comments": "Completely irrelevant. Summary discusses Mary Keitany, marathon times, Olympics, and 10,000m - none of which appear in the document about Foster and Smyth in 100m sprints. Entirely wrong content."
+      },
+      "coherence": {
+        "score": 1,
+        "comments": "No coherence. Starts mid-sentence ('ot Mary Keitany'), suggesting text was cut off. Multiple incomplete thoughts. Last sentence cuts off abruptly. Completely incoherent."
+      },
+      "fluency": {
+        "score": 1,
+        "comments": "Very poor fluency. Starts with broken text ('ot'), grammatically incomplete sentences. The text is fragmented and unreadable as a summary."
+      },
+      "factual_consistency": {
+        "score": 1,
+        "comments": "Entirely factually inconsistent. All names, events, times, and competitions mentioned are different from the source document. Complete hallucination of unrelated athletic content."
+      }
+    }
+  },
+  {
+    "index": 9674,
+    "document": "The finds were made by a team from Durham University, which is surveying the site on Midland Road before it is redeveloped for houses. The remains are believed to date to the medieval period...",
+    "reference_summary": "About 70 human skeletons have been uncovered by archaeologists during a dig at a former factory in Peterborough.",
+    "generated_summary": "Excavations at a site in Peterborough have uncovered human remains believed to date back to the medieval period. The remains are believed to have been buried in the 13th or 14th century. Archaeologists from Durham University are currently surveying the site on Midland Road before it is redeveloped for houses",
+    "evaluation": {
+      "content_relevance": {
+        "score": 5,
+        "comments": "Excellent relevance. Captures all key points: excavations, Peterborough, human remains, medieval period, Durham University, Midland Road, redevelopment. Adds plausible detail (13th/14th century) that's consistent with 'medieval'."
+      },
+      "coherence": {
+        "score": 5,
+        "comments": "Excellent coherence. Three well-structured sentences that flow logically. Clear narrative progression: discovery → dating → context."
+      },
+      "fluency": {
+        "score": 5,
+        "comments": "Perfect fluency. Grammatically correct, natural language, and appropriate academic/news style. Professional and clear."
+      },
+      "factual_consistency": {
+        "score": 4,
+        "comments": "Mostly consistent. All major facts accurate: Peterborough, human remains, medieval, Durham University, Midland Road, redevelopment. '70 skeletons' from reference not mentioned, and '13th/14th century' is added detail not in source but consistent with 'medieval'."
+      }
+    }
+  }
+]

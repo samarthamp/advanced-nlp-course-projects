@@ -1,0 +1,74 @@
+[
+  {
+    "index": 2286,
+    "document": "The concrete and steel arch will eventually cover the remains of the reactor which lost its roof in a catastrophic explosion in 1986. The blast sent a plume of radioactive material into the air...",
+    "reference_summary": "Work has begun at Chernobyl in Ukraine to move a giant shield over the site of the world's worst nuclear accident.",
+    "generated_summary": "An arch to contain the remains of the Chernobyl nuclear reactor has been completed.",
+    "evaluation": {
+      "content_relevance": {
+        "score": 4,
+        "comments": "Good relevance. Captures key elements: arch, Chernobyl, nuclear reactor. However, 'has been completed' vs 'work has begun' is a significant timing difference - implies finished vs started."
+      },
+      "coherence": {
+        "score": 5,
+        "comments": "Excellent coherence. Clear, complete sentence with logical structure. All elements connected properly."
+      },
+      "fluency": {
+        "score": 5,
+        "comments": "Perfect fluency. Grammatically correct, natural phrasing, and professional news style."
+      },
+      "factual_consistency": {
+        "score": 3,
+        "comments": "Partially consistent. Correctly identifies arch, Chernobyl, and purpose (contain reactor). However, 'completed' vs 'begun' is a major factual error - opposite states of the project timeline."
+      }
+    }
+  },
+  {
+    "index": 1679,
+    "document": "The Scottish Seabird Centre wants to expand its education and conservation programmes to include all marine life in a bid to remain viable. A National Marine Centre for Scotland is designed to be built...",
+    "reference_summary": "Plans for a £5.5m National Marine Centre for Scotland have been unveiled in East Lothian.",
+    "generated_summary": "The Scottish Seabird Centre has announced plans to build a national marine centre for Scotland.",
+    "evaluation": {
+      "content_relevance": {
+        "score": 4,
+        "comments": "Very good relevance. Captures main points: Scottish Seabird Centre, plans, national marine centre, Scotland. Missing: £5.5m budget and East Lothian location, which are important details."
+      },
+      "coherence": {
+        "score": 5,
+        "comments": "Excellent coherence. Clear, complete, and well-structured sentence. Logical flow with proper subject-verb-object structure."
+      },
+      "fluency": {
+        "score": 5,
+        "comments": "Perfect fluency. Grammatically flawless, natural language, and appropriate for news reporting."
+      },
+      "factual_consistency": {
+        "score": 5,
+        "comments": "Fully consistent. All facts accurate: Scottish Seabird Centre, announcement of plans, national marine centre. No contradictions with source material."
+      }
+    }
+  },
+  {
+    "index": 11087,
+    "document": "The 4.4-metre-long (14-ft) cloth is on show until 24 June. Viewings are free but must be booked. One million people have already signed up. Some devotees believe the shroud is the burial cloth of Jesus...",
+    "reference_summary": "The Turin Shroud has gone back on public display in the Italian city's cathedral, after a break of five years.",
+    "generated_summary": "Pope Francis will visit the Turin Shroud, which is on display for the first time.",
+    "evaluation": {
+      "content_relevance": {
+        "score": 2,
+        "comments": "Poor relevance. Mentions Turin Shroud and display, but misses the main point: it's back on public display after 5 years. Incorrectly focuses on Pope Francis's visit and 'first time' display (neither mentioned in reference)."
+      },
+      "coherence": {
+        "score": 5,
+        "comments": "Excellent coherence. Complete, well-structured sentence with clear narrative. Logically flows despite being factually incorrect."
+      },
+      "fluency": {
+        "score": 5,
+        "comments": "Perfect fluency. Grammatically correct with natural phrasing. No errors in language use."
+      },
+      "factual_consistency": {
+        "score": 2,
+        "comments": "Mostly inconsistent. Turin Shroud and display are correct, but 'first time' is wrong (it's returning after 5 years). Pope Francis visit may be true but isn't the main story in the reference."
+      }
+    }
+  }
+]

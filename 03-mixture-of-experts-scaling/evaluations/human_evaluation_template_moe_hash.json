@@ -1,0 +1,74 @@
+[
+  {
+    "index": 10476,
+    "document": "But Ms Atwell has promised to donate the money from the Global Teacher Prize to the school that she founded...",
+    "reference_summary": "Nancie Atwell, an English teacher from Maine in the United States, has been named as the winner of a competition to find the world's best teacher, with a prize of $1m (£680,000).",
+    "generated_summary": "The BBC's first female TV show has been named the BBC's new TV show...............",
+    "evaluation": {
+      "content_relevance": {
+        "score": 1,
+        "comments": "Completely irrelevant. Summary mentions 'BBC's first female TV show' which has no connection to the document about a teacher winning a prize. Misses all key information about Nancie Atwell, the Global Teacher Prize, and the $1m award."
+      },
+      "coherence": {
+        "score": 1,
+        "comments": "No coherence. The sentence is repetitive and incomplete ('TV show' mentioned twice). Ends with multiple dots indicating generation failure. No logical narrative structure."
+      },
+      "fluency": {
+        "score": 1,
+        "comments": "Very poor fluency. Awkward repetition, incomplete sentence, and gibberish dots at the end. Grammatically broken and unreadable."
+      },
+      "factual_consistency": {
+        "score": 1,
+        "comments": "Entirely factually inconsistent. Hallucinates information about BBC and TV show that doesn't exist in the source. Contains zero accurate facts from the document."
+      }
+    }
+  },
+  {
+    "index": 1824,
+    "document": "The Hamburg Commissioner for Data Protection and Freedom of Information said that the social network had not obtained effective approval from WhatsApp's 35 million German users...",
+    "reference_summary": "Facebook has been ordered by a German privacy regulator to stop collecting and storing the data of German users of its messaging app WhatsApp.",
+    "generated_summary": "The US has announced that it is to be used to stop the internet................",
+    "evaluation": {
+      "content_relevance": {
+        "score": 1,
+        "comments": "Completely irrelevant. Summary vaguely mentions 'US' and 'internet' but misses the core story about Facebook, WhatsApp, German privacy regulator, and data collection. No relevant content."
+      },
+      "coherence": {
+        "score": 1,
+        "comments": "No coherence at all. The sentence makes no logical sense ('it is to be used to stop the internet'). Incomplete thought followed by repetitive dots. Completely incoherent."
+      },
+      "fluency": {
+        "score": 1,
+        "comments": "Extremely poor fluency. Grammatically incorrect ('it is to be used to stop the internet' is nonsensical). Sentence fragment with no proper completion."
+      },
+      "factual_consistency": {
+        "score": 1,
+        "comments": "Factually inconsistent. Wrong country (US instead of Germany), wrong context (general internet vs WhatsApp data collection). Hallucinated content with no basis in the source."
+      }
+    }
+  },
+  {
+    "index": 409,
+    "document": "Donald Trump, Jeb Bush and Scott Walker will take the stage in Cleveland on Thursday night with seven rivals...",
+    "reference_summary": "Rick Perry, the former governor of Texas, is not among the 10 Republicans running for president who will take part in the first primetime TV debate.",
+    "generated_summary": "US President Donald Trump has announced that he will be the first round of the US presidential election..............",
+    "evaluation": {
+      "content_relevance": {
+        "score": 1,
+        "comments": "Very poor relevance. While it mentions Trump, it misses the key point about Rick Perry being excluded from the debate. Incorrectly describes Trump as 'President' (he was a candidate at the time) and talks about 'first round of election' rather than the TV debate."
+      },
+      "coherence": {
+        "score": 1,
+        "comments": "Lacks coherence. Incomplete sentence ('he will be the first round' is grammatically broken). Ends abruptly with dots. No clear narrative flow."
+      },
+      "fluency": {
+        "score": 1,
+        "comments": "Poor fluency. Grammatically incorrect ('announced that he will be the first round' doesn't make sense). Incomplete sentence with trailing dots."
+      },
+      "factual_consistency": {
+        "score": 1,
+        "comments": "Factually inconsistent. Incorrectly identifies Trump as 'President' when he was a candidate. Misrepresents the event as an announcement about elections rather than information about a TV debate lineup."
+      }
+    }
+  }
+]
